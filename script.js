@@ -28,36 +28,3 @@ function playRound (computerChoice, playerChoice) {
         return "You won this round"
     }
 }
-// create game function that will use previous functions
-function game() {
-    let i = 0
-    let playerScore = 0  // game should keep score
-    let computerScore = 0
-
-    while (i < 5) {  // the game should be a 5 round game
-        if (playerScore === 3 || computerScore === 3) {
-            break
-        }
-        let result = playRound()
-        if (result === "You lost this round") {
-            computerScore++
-            i++
-        } 
-        if (result === "You won this round") {
-            playerScore++
-            i++
-        }
-        console.log(result)
-        console.log(`You: ${playerScore}   Computer: ${computerScore}`)
-    }
-
-    // make game report a winner
-
-    if (playerScore > computerScore) {
-        console.log("Good job, you beat the machine!")
-    } else {
-        console.log("You lost, try again!")
-    }
-}
-
-game()
